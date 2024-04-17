@@ -5,19 +5,19 @@ export default function HomePage() {
     <div>
       <h1 id={style.homepageh1}>Harry Potter</h1>
       <nav>
-        <Link to="/characters" class={style.childrenlink}>
+        <Link to="/characters" className={style.childrenlink}>
           Characters
         </Link>
         <br />
-        <Link to="/books" class={style.childrenlink}>
+        <Link to="/books" className={style.childrenlink}>
           Books
         </Link>
         <br />
-        <Link to="/houses" class={style.childrenlink}>
+        <Link to="/houses" className={style.childrenlink}>
           Houses
         </Link>
         <br />
-        <Link to="/Spells" class={style.childrenlink}>
+        <Link to="/spells" className={style.childrenlink}>
           Spells
         </Link>
       </nav>

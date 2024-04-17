@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function BooksListPage() {
+export default function HousesListPage() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        "https://potterapi-fedeperin.vercel.app/en/books"
+        "https://potterapi-fedeperin.vercel.app/en/houses"
       );
       console.log(result.data);
       setData(result.data);
@@ -16,10 +16,12 @@ export default function BooksListPage() {
   }, []);
   return (
     <div>
-      <h1>Books</h1>
+      <h1>Houses</h1>
       <ul>
-        {data.map((book) => (
-          <li key={book.number}>{book.title}</li>
+        {data.map((house) => (
+          <li key={house.index}>
+            <Link to={`/houses/${house.index}`}>{house.house}</Link>
+          </li>
         ))}
       </ul>
     </div>
