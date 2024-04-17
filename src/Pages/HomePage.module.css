@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#homepageh1 {
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  padding: 10px;
+}
+
+.childrenlink {
+  color: rgb(234, 226, 217);
+  text-decoration: none;
+}
+
+.childrenlink:hover {
+  text-decoration: underline;
+  color: rgb(203, 143, 74);
+}
