@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import style from "../listPagesStyle.module.css";
 export default function SpellsListPage() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -15,12 +15,14 @@ export default function SpellsListPage() {
     fetchData();
   }, []);
   return (
-    <div>
-      <h1>Spells</h1>
-      <ul>
+    <div className={style.listPagesContainer}>
+      <h1 className={style.listPagesH1}>Spells</h1>
+      <ul className={style.listPagesUl}>
         {data.map((spell) => (
-          <li key={spell.index}>
-            <Link to={`/spells/${spell.index}`}>{spell.spell}</Link>
+          <li className={style.listPagesLi} key={spell.index}>
+            <Link className={style.listPagesLink} to={`/spells/${spell.index}`}>
+              {spell.spell}
+            </Link>
           </li>
         ))}
       </ul>

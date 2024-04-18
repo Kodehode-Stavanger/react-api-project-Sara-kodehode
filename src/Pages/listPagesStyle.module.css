@@ -1,0 +1,21 @@
+.listPagesContainer {
+  padding: 20px;
+}
+.listPagesH1 {
+  padding: 5px;
+}
+.listPagesUl {
+  padding: 10px;
+  font-size: 20px;
+}
+.listPagesLi {
+  padding: 5px;
+}
+.listPagesLink {
+  text-decoration: none;
+  color: black;
+}
+.listPagesLink:hover {
+  text-decoration: underline;
+  color: rgb(74, 75, 139);
+}

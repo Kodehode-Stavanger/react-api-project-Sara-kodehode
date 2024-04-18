@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import style from "../listPagesStyle.module.css";
 
 export default function HousesListPage() {
   const [data, setData] = useState([]);
@@ -15,12 +16,14 @@ export default function HousesListPage() {
     fetchData();
   }, []);
   return (
-    <div>
-      <h1>Houses</h1>
-      <ul>
+    <div className={style.listPagesContainer}>
+      <h1 className={style.listPagesH1}>Houses</h1>
+      <ul className={style.listPagesUl}>
         {data.map((house) => (
-          <li key={house.index}>
-            <Link to={`/houses/${house.index}`}>{house.house}</Link>
+          <li className={style.listPagesLi} key={house.index}>
+            <Link className={style.listPagesLink} to={`/houses/${house.index}`}>
+              {house.house}
+            </Link>
           </li>
         ))}
       </ul>

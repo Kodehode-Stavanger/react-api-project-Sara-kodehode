@@ -21,12 +21,12 @@ const router = createBrowserRouter([
       { path: "/books", element: <BooksListPage /> },
       { path: "/houses", element: <HousesListPage /> },
       { path: "/spells", element: <SpellsListPage /> },
+      { path: "/characters/:characterId", element: <CharacterPage /> },
+      { path: "/books/:bookId", element: <BookPage /> },
+      { path: "/houses/:houseId", element: <HousePage /> },
+      { path: "/spells/:spellsId", element: <SpellPage /> },
     ],
   },
-  { path: "/characters/:characterId", element: <CharacterPage /> },
-  { path: "/books/:bookId", element: <BookPage /> },
-  { path: "/houses/:houseId", element: <HousePage /> },
-  { path: "/spells/:spellsId", element: <SpellPage /> },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
