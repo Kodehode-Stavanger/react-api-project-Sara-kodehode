@@ -9,7 +9,7 @@ export default function BooksListPage() {
       const result = await axios(
         "https://potterapi-fedeperin.vercel.app/en/books"
       );
-      console.log(result.data);
+
       setData(result.data);
     };
     fetchData();

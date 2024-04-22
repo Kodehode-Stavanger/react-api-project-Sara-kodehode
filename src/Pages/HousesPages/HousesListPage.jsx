@@ -10,7 +10,7 @@ export default function HousesListPage() {
       const result = await axios(
         "https://potterapi-fedeperin.vercel.app/en/houses"
       );
-      console.log(result.data);
+
       setData(result.data);
     };
     fetchData();

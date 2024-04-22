@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       { path: "/characters/:characterId", element: <CharacterPage /> },
       { path: "/books/:bookId", element: <BookPage /> },
       { path: "/houses/:houseId", element: <HousePage /> },
-      { path: "/spells/:spellsId", element: <SpellPage /> },
+      { path: "/spells/:spellId", element: <SpellPage /> },
     ],
   },
 ]);

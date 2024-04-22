@@ -1,0 +1,17 @@
+.itemPageContainer {
+  padding: 10px;
+}
+.itemPageTitle {
+  font-size: 2rem;
+  padding: 5px;
+}
+.itemPageSubtitle {
+  font-size: 1.2rem;
+  padding: 2px 5px;
+}
+
+.itemPageLink {
+  margin-top: 10px;
+  font-size: 1rem;
+  padding: 10px;
+}

@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import style from "../singleitemStyle.module.css";
 export default function BookPage() {
   const [bookData, setBookData] = useState();
   const { bookId } = useParams();
@@ -9,17 +10,21 @@ export default function BookPage() {
       const result = await axios(
         `https://potterapi-fedeperin.vercel.app/en/books?index=${bookId}`
       );
-      console.log(result.data);
+
       setBookData(result.data);
     };
     fetchData();
   }, []);
   return (
-    <div>
-      <h3>Book title: {bookData?.title}</h3>
-      <h4>Release Date: {bookData?.releaseDate}</h4>
-      <h4>Pages: {bookData?.pages}</h4>
-      <Link to="/books">Back to Books</Link>
+    <div className={style.itemPageContainer}>
+      <h3 className={style.itemPageTitle}>Book title: {bookData?.title}</h3>
+      <h4 className={style.itemPageSubtitle}>
+        Release Date: {bookData?.releaseDate}
+      </h4>
+      <h4 className={style.itemPageSubtitle}>Pages: {bookData?.pages}</h4>
+      <Link className={style.itemPageLink} to="/books">
+        Back to Books
+      </Link>
     </div>
   );
 }

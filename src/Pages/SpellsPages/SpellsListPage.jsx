@@ -9,7 +9,7 @@ export default function SpellsListPage() {
       const result = await axios(
         "https://potterapi-fedeperin.vercel.app/en/spells"
       );
-      console.log(result.data);
+
       setData(result.data);
     };
     fetchData();
