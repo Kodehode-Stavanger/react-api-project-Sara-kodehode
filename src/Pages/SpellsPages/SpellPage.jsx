@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import style from "../singleitemStyle.module.css";
 export default function SpellPage() {
   const [spellData, setSpellData] = useState();
   const { spellId } = useParams();
@@ -14,7 +14,6 @@ export default function SpellPage() {
           `https://potterapi-fedeperin.vercel.app/en/spells?index=${spellId}`
         );
 
-        console.log(result.data);
         setSpellData(result.data);
       } catch (e) {
         setError(e.message);
@@ -24,9 +23,12 @@ export default function SpellPage() {
   }, []);
   if (error) return <NotFoundPage msg={error} />;
   return (
-    <div>
-      <h4>Spell: {spellData.spell}</h4>
-      <h4>Use: {spellData.use}</h4>
+    <div className={style.itemPageContainer}>
+      <h3 className={style.itemPageTitle}>Spell: {spellData?.spell}</h3>
+      <h4 className={style.itemPageSubtitle}>Use: {spellData?.use}</h4>
+      <Link className={style.itemPageLink} to="/spells">
+        Back to Spells
+      </Link>
     </div>
   );
 }
