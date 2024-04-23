@@ -5,18 +5,24 @@ import style from "../singleitemStyle.module.css";
 export default function CharacterPage() {
   const [characterData, setCharcterData] = useState();
   const { characterId } = useParams();
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        `https://potterapi-fedeperin.vercel.app/en/characters?index=${characterId}`
-      );
+      try {
+        const result = await axios(
+          `https://potterapi-fedeperin.vercel.app/en/characters?index=${characterId}`
+        );
 
-      setCharcterData(result.data);
+        setCharcterData(result.data);
+      } catch (e) {
+        setError(e.message);
+      }
     };
+
     fetchData();
   }, []);
-
+  if (error) return <NotFoundPage msg={error} />;
   return (
     <div className={style.itemPageContainer}>
       <h3 className={style.itemPageTitle}>

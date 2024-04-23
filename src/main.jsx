@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
-    errorElement: <NotFoundPage />,
+    errorElement: <NotFoundPage msg="Erorr 404, Can't find this page" />,
     children: [
       { path: "/characters", element: <CharactersListPage /> },
       { path: "/books", element: <BooksListPage /> },
