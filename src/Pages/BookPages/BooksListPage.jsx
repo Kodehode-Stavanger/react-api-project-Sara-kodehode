@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import style from "../listPagesStyle.module.css";
 import Spinner from "../Spinner";
+import Card from "../Card";
 export default function BooksListPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
@@ -33,7 +34,7 @@ export default function BooksListPage() {
         {data.map((book) => (
           <li className={style.listPagesLi} key={book.number}>
             <Link className={style.listPagesLink} to={`/books/${book.number}`}>
-              {book.title}
+              <Card name={book?.fullName} img={book?.cover} />
             </Link>
           </li>
         ))}

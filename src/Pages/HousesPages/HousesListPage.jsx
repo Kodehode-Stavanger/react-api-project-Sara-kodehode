@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import style from "../listPagesStyle.module.css";
 import Spinner from "../Spinner";
+import Card from "../Card";
 
 export default function HousesListPage() {
   const [data, setData] = useState([]);
@@ -17,6 +18,7 @@ export default function HousesListPage() {
         );
 
         setData(result.data);
+        console.log(result.data);
         setLoading(false);
       } catch (e) {
         setError(e.message);
@@ -33,7 +35,7 @@ export default function HousesListPage() {
         {data.map((house) => (
           <li className={style.listPagesLi} key={house.index}>
             <Link className={style.listPagesLink} to={`/houses/${house.index}`}>
-              {house.house}
+              <Card name={house.house} emoji={house.emoji} />
             </Link>
           </li>
         ))}

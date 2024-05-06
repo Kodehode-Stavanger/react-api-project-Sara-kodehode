@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./Pages/HomePages/HomePage";
-import NotFoundPage from "./Pages/HomePages/NotFoundPage";
+import NotFoundPage from "./Pages/NotFoundPage";
 import CharactersListPage from "./Pages/CharacterPages/CharactersListpage";
 import CharacterPage from "./Pages/CharacterPages/CharacterPage";
 import BooksListPage from "./Pages/BookPages/BooksListPage";

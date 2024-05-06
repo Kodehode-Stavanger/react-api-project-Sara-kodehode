@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import style from "../singleitemStyle.module.css";
-import NotFoundPage from "../HomePages/NotFoundPage";
+import NotFoundPage from "../NotFoundPage";
 export default function BookPage() {
   const [bookData, setBookData] = useState();
   const [error, setError] = useState();
@@ -13,7 +13,7 @@ export default function BookPage() {
         const result = await axios(
           `https://potterapi-fedeperin.vercel.app/en/books?index=${bookId}`
         );
-
+        console.log(result.data);
         setBookData(result.data);
       } catch (e) {
         setError(e.message);
@@ -29,6 +29,7 @@ export default function BookPage() {
         Release Date: {bookData?.releaseDate}
       </h4>
       <h4 className={style.itemPageSubtitle}>Pages: {bookData?.pages}</h4>
+      <img src={bookData?.cover} alt={bookData?.title} />
       <Link className={style.itemPageLink} to="/books">
         Back to Books
       </Link>

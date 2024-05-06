@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import style from "../singleitemStyle.module.css";
-import NotFoundPage from "../HomePages/NotFoundPage";
+import NotFoundPage from "../NotFoundPage";
 export default function HousePage() {
   const [houseData, setHouseData] = useState();
   const { houseId } = useParams();
@@ -31,6 +31,7 @@ export default function HousePage() {
       <h4 className={style.itemPageSubtitle}>
         House Animal: {houseData?.animal}
       </h4>
+      <h3>{houseData?.emoji}</h3>
       <Link className={style.itemPageLink} to="/houses">
         Back to Houses
       </Link>

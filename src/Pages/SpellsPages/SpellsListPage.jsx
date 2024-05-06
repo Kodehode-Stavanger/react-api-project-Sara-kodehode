@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import style from "../listPagesStyle.module.css";
 import Spinner from "../Spinner";
+import Card from "../Card";
 export default function SpellsListPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
@@ -32,7 +33,7 @@ export default function SpellsListPage() {
         {data.map((spell) => (
           <li className={style.listPagesLi} key={spell.index}>
             <Link className={style.listPagesLink} to={`/spells/${spell.index}`}>
-              {spell.spell}
+              <Card name={spell.spell} />
             </Link>
           </li>
         ))}

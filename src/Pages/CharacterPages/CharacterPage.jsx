@@ -34,6 +34,7 @@ export default function CharacterPage() {
       <h4 className={style.itemPageSubtitle}>
         Hogwarts House: {characterData?.hogwartsHouse}
       </h4>
+      <img src={characterData?.image} alt={characterData?.fullName} />
       <Link className={style.itemPageLink} to="/characters">
         Back to Characters
       </Link>

@@ -1,12 +1,26 @@
 .listPagesContainer {
   padding: 20px;
+  display: grid;
 }
 .listPagesH1 {
+  text-align: center;
   padding: 5px;
 }
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .listPagesUl {
   padding: 10px;
   font-size: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-content: center;
+  gap: 20px;
+  text-align: center;
+  list-style: none;
 }
 .listPagesLi {
   padding: 5px;
@@ -16,6 +30,26 @@
   color: black;
 }
 .listPagesLink:hover {
-  text-decoration: underline;
-  color: rgb(74, 75, 139);
+  /* text-decoration: underline; */
+  color: rgb(29, 30, 77);
+}
+
+.cardContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-height: max-content;
+  height: 100%;
+}
+
+.cardContainer:hover {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 200px;
 }
